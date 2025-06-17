@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Inventoria</title>
+    <meta name="description" content="Inventoria">
+    <link rel="stylesheet" href="index.css">
+    <script src="js.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="imgs/logo2.png">
+</head>
+<body>
+    <header>
+        <div id="titulo">
+            <a href="home.html" id="titulo">
+                <img src="imgs/logo2.png" id="logo" alt="Logo" title="Logo">
+                <h1>INVENTORIA</h1>
+            </a>
+        </div>
+        <div class="botones" id="botones">
+            <div class="botones-izquierda">
+                <a href="listado.html" class="boton-link">
+                    <button id="listado-anime">Animes</button>
+                </a>
+                <a href="ranking.html" class="boton-link">
+                    <button id="ranking">Ranking</button>
+                </a>
+                <a href="milista.html" class="boton-link">
+                    <button id="milista-button">Mi lista</button>
+                </a>
+            </div>
+            <div class="botones-derecha">
+                <button id="register-button">Registrarse</button>   
+                <button id="login-button">Iniciar Sesión</button>
+                <button style="display: none;" id="user-icon">
+                    <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="Usuario" title="Perfil de usuario"/>
+                </button>
+                <div id="user-menu">
+                    <a href="perfil.html" class="boton-link">
+                        <button id="perfil-btn"><img src="imgs/free-user-icon-3296-thumb.png">Mi perfil</button>
+                    </a>
+                    <button id="logout-btn"><img src="imgs/logout-icon-2048x2048-libuexip.png">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <section id="carrusel">
+        <div id="carrusel-container">
+        </div>
+    <button class="boton izquierda" onclick="anterior()">&#10094;</button>
+    <button class="boton derecha" onclick="siguiente()">&#10095;</button>
+    </section>
+
+    <section>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Iniciar sesión</button>
+                </form>
+                <div id="login-error" class="error-message"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Registrarse</h2>
+                <form id="registerForm">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <div id="password-hint" class="password-tooltip">
+                    La contraseña debe tener al menos:<br>
+                    • 8 caracteres<br>
+                    • 1 letra mayúscula<br>
+                    • 1 número
+                    </div>
+                    
+                    <button type="submit">Registrarse</button>
+                </form> 
+                <div id="register-error" class="error-message"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
