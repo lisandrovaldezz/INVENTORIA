@@ -46,8 +46,6 @@
         </div>
     </header>
     <main>
-
-    </main>
     <div id="filtro-div">
         <h2>Listado de animes</h2>
         <div id="filtro-listado">Categoría:
@@ -55,35 +53,40 @@
                     <img src="imgs/flechaabajo.png" alt="Flecha abajo" id="flecha-abajo">
                 </div>
                 <div id="filtro-categoria-opciones">
-                    <div class="filtro-categoria-item">Todas</div>
-                    <div class="filtro-categoria-item">Acción</div>
-                    <div class="filtro-categoria-item">Aventuras</div>
-                    <div class="filtro-categoria-item">Deportes</div>
-                    <div class="filtro-categoria-item">Romance</div>
-                    <div class="filtro-categoria-item">Fantasía</div>
-                    <div class="filtro-categoria-item">Mecha</div>
-                    <div class="filtro-categoria-item">Shounen</div>
-                    <div class="filtro-categoria-item">Shoujo</div>
-                    <div class="filtro-categoria-item">Seinen</div>
-                    <div class="filtro-categoria-item">Musical</div>
-                    <div class="filtro-categoria-item">Comedia</div>
-                    <div class="filtro-categoria-item">Samurai</div>
-                    <div class="filtro-categoria-item">Superpoderes</div>
-                    <div class="filtro-categoria-item">Tragedia</div>
+                    <div id="filtro-categoria-opciones-container">
+                    </div>
                 </div>
-            <label>Ordenar por:
-            <select id="ordenar">
-                <option value="Por Defecto">Por Defecto</option>
-                <option value="A - Z">A - Z</option>
-                <option value="Z - A">Z - A</option>
-                <option value="Calificación">Calificación</option>
-                <option value="Ranking">Ranking</option>
-            </select>
-            </label>
+            Ordenar por:
+            <div id="ordenar-default">Por Defecto
+                <img src="imgs/flechaabajo.png" alt="Flecha abajo" id="flecha-abajo">
+            </div>
+            <div id="ordenar-opciones">
+                <div id="ordenar-opciones-container">
+                    <label class="ordenar-opciones-item">
+                        <input type="radio" name="orden" value="Por Defecto" />
+                        Por Defecto
+                    </label>
+                    <label class="ordenar-opciones-item">
+                        <input type="radio" name="orden" value="A - Z" />
+                        A - Z
+                    </label>
+                    <label class="ordenar-opciones-item">
+                        <input type="radio" name="orden" value="Z - A" />
+                        Z - A
+                    </label>
+                    <label class="ordenar-opciones-item">
+                        <input type="radio" name="orden" value="Calificación" />
+                        Calificación
+                    </label>
+                    <label class="ordenar-opciones-item">
+                        <input type="radio" name="orden" value="Ranking" />
+                        Ranking
+                    </label>
+                </div>
+            </div>
             <button id="filtrar">
                 <img src="imgs/filtro.png" alt="Filtrar" id="filtro-img">Filtrar
             </button>
-        </div>
     </div>
 
     <section id="listado-animes">
@@ -115,6 +118,9 @@
                 <span class="close">&times;</span>
                 <h2>Registrarse</h2>
                 <form id="registerForm">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" name="email" required>
+                    
                     <label for="username">Usuario:</label>
                     <input type="text" id="username" name="username" required>
                     
@@ -133,5 +139,6 @@
             </div>
         </div>
     </section>
+    </main>
 </body>
 </html>

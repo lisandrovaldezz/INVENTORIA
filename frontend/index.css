@@ -209,7 +209,6 @@ form button:hover {
 }
 
 #user-menu {
-    display: none; 
     position: absolute; 
     width:180px;
     top: 60px; 
@@ -365,17 +364,15 @@ form button:hover {
   margin-left:100px;
   margin-bottom:-100px;
   gap:40px;
-  font-size:20px;
+  font-size:22px;
   color:rgb(202, 142, 113);
   font-weight: bold;
 }
 
-#filtro-div {
-    margin-left:100px;
-}
 
 #filtro-div h2 {
-    color:rgb(202, 142, 113);
+  margin-left:70px;
+  color:rgb(202, 142, 113);
 }
 
 #filtrar {
@@ -389,6 +386,8 @@ form button:hover {
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
     'Helvetica Neue', sans-serif;
+  margin-top:2px;
+  border: 1px inset rgb(202, 142, 113);
 }
 
 #filtrar:active {
@@ -399,6 +398,11 @@ form button:hover {
     width:19px;
     height:19px;
     margin-right:7px;
+}
+
+#filtro-listado {
+    display: flex;
+    align-items:center;
 }
 
 #filtro-categoria-default {
@@ -413,14 +417,198 @@ form button:hover {
     display:flex;
     text-align:center;
     align-items:center;
+    margin-left:-20px;
+    height:24px;
+    margin-top:5px;
+    border: 1px inset rgb(202, 142, 113);
 }
 
 #filtro-categoria-opciones {
-  display: none;
+  background-color: rgb(71, 70, 81);
+  position: absolute;
+  border-radius:5px;
+  padding:5px;
+  margin-top:300px;
+  z-index:10;
+  width:330px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color:white;
+  font-size:18px;
+  font-weight:normal;
 }
+
 
 #flecha-abajo {
   margin-left:15px;
   width:14px;
   height:14px;
+}
+
+#filtro-categoria-opciones-container {
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content: center;
+    row-gap:20px;
+}
+
+.filtro-categoria-opciones-item {
+    width:100px;
+    font-size:15px;
+    padding:0;
+    margin:0;
+    margin-left:8px;
+}
+
+.filtro-categoria-opciones-item input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#ordenar-default {
+    background-color: rgb(71, 70, 81);
+    padding-left:8px;
+    padding-right:8px;
+    color:white;
+    font-weight:lighter;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    display:flex;
+    text-align:center;
+    align-items:center;
+    margin-left:-20px;
+    height:24px;
+    margin-top:5px;
+    border: 1px inset rgb(202, 142, 113);
+}
+
+#ordenar-opciones {
+  background-color: rgb(71, 70, 81);
+  position: absolute;
+  border-radius:5px;
+  padding:5px;
+  margin-top:240px;
+  z-index:10;
+  width:130px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color:white;
+  font-size:15px;
+  font-weight:normal;
+  margin-left:420px;
+}
+
+
+#ordenar-opciones-container {
+  display:flex;
+  flex-direction:column;
+  row-gap:10px;
+}
+
+.ordenar-opciones-item {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+  user-select: none;
+}
+
+#perfil-grid {
+  width:70vw;
+  height:80vh;
+  margin-left:15%;
+  margin-top:3.5%;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 2fr 1.8fr;
+  grid-template-rows: 1fr 0.2fr 1.8fr 1fr;
+  gap:15px;
+}
+
+.perfil-grid-item {
+  background-color: rgba(1,0,1,255);
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.4px rgba(137,100,86,255);
+}
+
+#perfil-grid-imagen {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+#perfil-grid-datos {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+#perfil-grid-banner {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+#perfil-grid-listados{
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+#perfil-grid-ranking {
+  grid-column: 3 / 5;
+  grid-row: 2 / 5;
+}
+#perfil-grid-seguridad {
+  grid-column: 1 / 3;
+}
+#perfil-grid-logo {
+  grid-row:2/3;
+  grid-column:2/3;
+}
+#perfil-grid-logo img {
+  margin-left:7.5px;
+}
+
+#banner {
+  width:100%;
+  height:100%;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#perfil-grid-datos {
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  text-indent: 10px;
+  font-size:25px;
+  font-weight: bold;
+  color:rgba(240,218,183,255);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#perfil-grid-datos p {
+  margin-top:130px;
+}
+
+#perfil-grid-datos span {
+  margin-top:10px;
+}
+
+.edit {
+  width:35px;
+  height:35px;
+  border:none;
+  background:none;
+  cursor: pointer;
+  margin-right:10px;
+  margin-top:5px;
+}
+
+#edit-imagen {
+  width:25px;
+  height:25px;
+  justify-self:center;
+  align-self:center;
+}
+
+.perfil-grid-datos-item {
+  display:flex;
+  justify-content: space-between;
 }

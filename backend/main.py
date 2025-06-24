@@ -36,3 +36,7 @@ app.add_middleware(
      allow_methods=["*"],
      allow_headers=["*"],
 )
+
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/static", StaticFiles(directory="static"), name="static")

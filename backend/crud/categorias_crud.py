@@ -17,5 +17,5 @@ def crearCategoria(db: Session, categoria: CategoriaBase):
     db.refresh(nueva_categoria)
     return nueva_categoria
 
-def getCategorias(db:Session,skip: int = 0, limit: int = 10):
-    return db.query(Categoria).offset(skip).limit(limit).all()
+def getCategorias(db:Session):
+    return db.query(Categoria).all()

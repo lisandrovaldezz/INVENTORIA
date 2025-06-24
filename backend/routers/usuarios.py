@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from model.usuarios import Usuario
 from database import get_db
-from crud.usuarios_crud import (crearUsuario,getUsuarios,getUsuarioByUsername)
+from crud.usuarios_crud import (crearUsuario,getUsuarios,getUsuarioByUsername,getUsuarioByEmail)
 from schemas.usuarios import (UsuarioBase,UsuarioDB,UsuarioCreate,LoginRequest,LoginResponse)
 from fastapi.responses import JSONResponse
 from auth.auth import create_access_token,hash_password,verify_password
@@ -14,10 +14,21 @@ router = APIRouter()
 def get_usuarios(db: Session = Depends(get_db)):
     return getUsuarios(db)
 
+@router.get("/usuario/{username}", response_model=UsuarioDB)
+def get_usuario(username: str, db: Session = Depends(get_db)):
+    print(username)
+    return getUsuarioByUsername(db, username)
+
 @router.post("/register/", response_model=dict)
 def register_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
+    if(usuario.username==""):
+        raise HTTPException(status_code=400, detail="El username no puede estar vacío")
+    
     if getUsuarioByUsername(db, usuario.username):
         raise HTTPException(status_code=400, detail="El usuario ya existe")
+    
+    if getUsuarioByEmail(db, usuario.email):
+        raise HTTPException(status_code=400, detail="Ya existe una cuenta con ese correo")
     
     if len(usuario.password) < 8:
         raise HTTPException(status_code=400, detail="La contraseña debe tener al menos 8 caracteres")
@@ -48,4 +59,7 @@ async def login_usuario(form: LoginRequest, db: Session = Depends(get_db)):
     )
     
     return JSONResponse(content={"access_token": access_token, "token_type": "bearer"})
+
+
+
 
